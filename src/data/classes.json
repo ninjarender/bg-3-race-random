@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Barbarian",
+    "subclasses": ["Berserker", "Wildheart", "Wild Magic"],
+    "primaryAbilities": ["Strength"]
+  },
+  {
+    "name": "Bard",
+    "subclasses": ["College of Lore", "College of Valour", "College of Swords"],
+    "primaryAbilities": ["Charisma"]
+  },
+  {
+    "name": "Cleric",
+    "subclasses": ["Life Domain", "Light Domain", "Trickery Domain", "Knowledge Domain", "Nature Domain", "Tempest Domain", "War Domain"],
+    "primaryAbilities": ["Wisdom"]
+  },
+  {
+    "name": "Druid",
+    "subclasses": ["Circle of the Land", "Circle of the Moon", "Circle of Spores"],
+    "primaryAbilities": ["Wisdom"]
+  },
+  {
+    "name": "Fighter",
+    "subclasses": ["Battle Master", "Eldritch Knight", "Champion"],
+    "primaryAbilities": ["Strength", "Dexterity"]
+  },
+  {
+    "name": "Monk",
+    "subclasses": ["Way of the Open Hand", "Way of Shadow", "Way of the Four Elements"],
+    "primaryAbilities": ["Dexterity", "Wisdom"]
+  },
+  {
+    "name": "Paladin",
+    "subclasses": ["Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance", "Oathbreaker"],
+    "primaryAbilities": ["Strength", "Charisma"]
+  },
+  {
+    "name": "Ranger",
+    "subclasses": ["Hunter", "Beast Master", "Gloom Stalker"],
+    "primaryAbilities": ["Dexterity", "Wisdom"]
+  },
+  {
+    "name": "Rogue",
+    "subclasses": ["Thief", "Arcane Trickster", "Assassin"],
+    "primaryAbilities": ["Dexterity"]
+  },
+  {
+    "name": "Sorcerer",
+    "subclasses": ["Draconic Bloodline", "Wild Magic", "Storm Sorcery"],
+    "primaryAbilities": ["Charisma"]
+  },
+  {
+    "name": "Warlock",
+    "subclasses": ["The Fiend", "The Great Old One", "The Archfey"],
+    "primaryAbilities": ["Charisma"]
+  },
+  {
+    "name": "Wizard",
+    "subclasses": ["Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Necromancy", "Illusion", "Transmutation"],
+    "primaryAbilities": ["Intelligence"]
+  }
+]
+

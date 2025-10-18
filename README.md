@@ -1,73 +1,96 @@
-# React + TypeScript + Vite
+# 🎲 BG3 Random Build Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fan-made web app that generates completely random character builds for **Baldur's Gate 3**.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎲 **One-click random generation** — Generate race, subrace, class, subclass, and background
+- 🔗 **Share builds via URL** — Share your build with friends using URL parameters
+- 📋 **Copy to clipboard** — Copy build details as formatted text
+- 💾 **Auto-save** — Last generated build saved to localStorage
+- 🌙 **BG3-themed dark UI** — Immersive design with gold accents
+- 📱 **Fully responsive** — Works on desktop and mobile
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** + **TypeScript** — Type-safe component development
+- **Vite** — Lightning-fast build tool
+- **Zustand** — Lightweight state management
+- **Tailwind CSS** — Utility-first styling
+- **localStorage** — Build persistence
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Run development server
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Build for production
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎮 How to Use
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Click **"Generate Random Build"** to create a new character
+2. Click **"Generate Again"** to create another build
+3. Click **"Share URL"** to copy a shareable link
+4. Click **"Copy Build"** to copy build details as text
+5. Click **"Reset"** to clear the current build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📊 Data Structure
+
+The app uses local JSON files for all game data:
+
+- `src/data/races.json` — All BG3 races and subraces
+- `src/data/classes.json` — All BG3 classes and subclasses
+- `src/data/backgrounds.json` — All BG3 backgrounds
+
+## 🔧 Project Structure
+
 ```
+src/
+├── components/        # React components
+│   └── BuildCard.tsx # Build result display
+├── data/             # Game data JSON files
+│   ├── races.json
+│   ├── classes.json
+│   └── backgrounds.json
+├── store/            # Zustand state management
+│   └── useBuildStore.ts
+├── types/            # TypeScript types
+│   └── index.ts
+├── utils/            # Helper functions
+│   └── buildGenerator.ts
+├── App.tsx           # Main app component
+├── main.tsx          # App entry point
+└── index.css         # Global styles
+```
+
+## 🎯 Acceptance Criteria (MVP)
+
+✅ Random generation works for all attributes  
+✅ Dependencies (race↔subrace, class↔subclass) are respected  
+✅ Share URLs function correctly  
+✅ Build persists via localStorage  
+✅ UI adapts to mobile screens  
+✅ No TypeScript compilation errors
+
+## 📝 License
+
+MIT License
+
+## 👨‍💻 Author
+
+**Vadym Kruchyna**  
+2025
+
+---
+
+> **Disclaimer:** This is a fan-made tool for *Baldur's Gate 3* players.  
+> Not affiliated with **Larian Studios** or **Wizards of the Coast**.

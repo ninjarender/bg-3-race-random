@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Elf",
+    "subraces": ["High Elf", "Wood Elf", "Drow"]
+  },
+  {
+    "name": "Dwarf",
+    "subraces": ["Gold Dwarf", "Shield Dwarf", "Duergar"]
+  },
+  {
+    "name": "Human"
+  },
+  {
+    "name": "Githyanki"
+  },
+  {
+    "name": "Halfling",
+    "subraces": ["Lightfoot Halfling", "Strongheart Halfling"]
+  },
+  {
+    "name": "Tiefling",
+    "subraces": ["Asmodeus Tiefling", "Mephistopheles Tiefling", "Zariel Tiefling"]
+  },
+  {
+    "name": "Drow"
+  },
+  {
+    "name": "Half-Elf",
+    "subraces": ["High Half-Elf", "Wood Half-Elf", "Drow Half-Elf"]
+  },
+  {
+    "name": "Half-Orc"
+  },
+  {
+    "name": "Gnome",
+    "subraces": ["Rock Gnome", "Forest Gnome", "Deep Gnome"]
+  },
+  {
+    "name": "Dragonborn",
+    "subraces": ["Black Dragonborn", "Blue Dragonborn", "Brass Dragonborn", "Bronze Dragonborn", "Copper Dragonborn", "Gold Dragonborn", "Green Dragonborn", "Red Dragonborn", "Silver Dragonborn", "White Dragonborn"]
+  }
+]
+
