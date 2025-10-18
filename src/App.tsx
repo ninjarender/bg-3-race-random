@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useBuildStore } from "./store/useBuildStore";
 import { BuildCard } from "./components/BuildCard";
+import { BuildAnimator } from "./components/BuildAnimator";
 import { buildFromURLParams } from "./utils/buildGenerator";
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   } = useBuildStore();
   const [copySuccess, setCopySuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [pendingBuild, setPendingBuild] = useState<typeof currentBuild>(null);
 
   // Load build from URL params on mount
   useEffect(() => {
@@ -26,11 +29,20 @@ function App() {
   }, [setBuild]);
 
   const handleGenerate = () => {
-    generateBuild();
     setCopySuccess(false);
     setShareSuccess(false);
     // Clear URL params
     window.history.replaceState({}, "", window.location.pathname);
+
+    // Generate build and start animation
+    const newBuild = generateBuild();
+    setPendingBuild(newBuild);
+    setIsGenerating(true);
+  };
+
+  const handleAnimationComplete = () => {
+    setIsGenerating(false);
+    setPendingBuild(null);
   };
 
   const handleCopy = async () => {
@@ -73,7 +85,12 @@ function App() {
 
       {/* Main Content */}
       <main className="w-full max-w-4xl flex flex-col items-center gap-6">
-        {currentBuild ? (
+        {isGenerating && pendingBuild ? (
+          <BuildAnimator
+            build={pendingBuild}
+            onComplete={handleAnimationComplete}
+          />
+        ) : currentBuild ? (
           <>
             <BuildCard build={currentBuild} />
 

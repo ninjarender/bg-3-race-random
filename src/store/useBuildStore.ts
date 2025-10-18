@@ -5,7 +5,7 @@ import { generateRandomBuild, buildToURLParams, buildToText } from '../utils/bui
 
 interface BuildStore {
   currentBuild: Build | null;
-  generateBuild: () => void;
+  generateBuild: () => Build;
   setBuild: (build: Build) => void;
   resetBuild: () => void;
   shareURL: () => string;
@@ -20,6 +20,7 @@ export const useBuildStore = create<BuildStore>()(
       generateBuild: () => {
         const newBuild = generateRandomBuild();
         set({ currentBuild: newBuild });
+        return newBuild;
       },
 
       setBuild: (build: Build) => {
