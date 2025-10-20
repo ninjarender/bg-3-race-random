@@ -20,9 +20,13 @@ export function WheelSpinner({
     const selectedIndex = options.indexOf(selectedOption);
     const segmentAngle = 360 / options.length;
 
+    // Add random offset within the segment (between 0.2 and 0.8 of segment width)
+    // This makes it stop randomly within the sector, not at the edge
+    const randomOffset = (Math.random() * 0.6 + 0.2) * segmentAngle;
+
     // Calculate final rotation to land on selected option
-    // Add extra spins for effect (5 full rotations + position)
-    const targetAngle = 360 * 5 + selectedIndex * segmentAngle;
+    // Add extra spins for effect (5 full rotations + position + random offset)
+    const targetAngle = 360 * 5 + selectedIndex * segmentAngle + randomOffset;
 
     setRotation(targetAngle);
 
